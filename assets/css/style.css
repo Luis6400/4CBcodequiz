@@ -1,0 +1,31 @@
+header{
+    vertical-align: baseline;
+    background-color: rgb(174, 211, 246);
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: auto;
+}
+
+header h1{
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    color: rgb(0, 0, 0);
+}
+
+header a {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-family: 'Roboto', sans-serif;
+
+}
+header p{
+    position: absolute;
+     /* how to make it go to the top right of the header*/
+    top: 10px;
+    right: 10px;
+    font-family: 'Roboto', sans-serif;
+}
