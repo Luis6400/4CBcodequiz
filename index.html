@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,32 +9,54 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>Document</title>
 </head>
+
 <body>
+
+    <div id="startpage">
+        <header id="starthead">
+            <a class="highbutton" href="javascript:highscoreopen();">Highscores</a>
+            <h1 class="title">Quiz</h1>
+            <p class="timertext">timer: <span class="timernum"></span></p>
+        </header>
+        <button id="startbut" type="button">Start!</button>
+    </div>
+
     <div id="gamepage">
-    <header>
-        <a id="highbutton" href="" class="highscores">Highscores</a>
-        <h1 id="title">Quiz</h1>
-        <p>timer: <span id="timernum"></span></p>
-    </header>
-    <main>
-        <div id="game">
-            <div id="question">
-                <p id="questiontext"></p>
+        <header id="gamehead">
+            <a class="highbutton" href="javascript:highscoreopen();" class="highscores">Highscores</a>
+            <h1 class="title">Quiz</h1>
+            <p class="timertext">timer: <span class="timernum"></span></p>
+        </header>
+        <main>
+            <div id="game">
+                <div id="question">
+                    <p id="questiontext"></p>
+                </div>
+                <div id="answers">
+                    <button id="answer1" class="answer"></button>
+                    <button id="answer2" class="answer"></button>
+                    <button id="answer3" class="answer"></button>
+                    <button id="answer4" class="answer"></button>
+                </div>
             </div>
-            <div id="answers">
-                <button id="answer1" class="answer"></button>
-                <button id="answer2" class="answer"></button>
-                <button id="answer3" class="answer"></button>
-                <button id="answer4" class="answer"></button>
-            </div>
-        </div>
-    </main>
+        </main>
     </div>
     <div id="highscorepage">
-        <header>
+        <header id="highhead">
             <h1>Highscores</h1>
         </header>
+        
+        <main>
+            <div id="highscore">
+                <div id="highscorelist">
+                    <ol id="highscorelistol">
+                        
+                    </ol>
+                </div>
+            </div>
+            <a class="backbutton" href="javascript:backbutton();">Back</a>
     </div>
     <script type="text/javascript" src="./assets/js/script.js"></script>
 </body>
+
 </html>

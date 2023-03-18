@@ -1,4 +1,9 @@
-header{
+body{
+    overflow: hidden;
+}
+
+#gamehead{
+    display: flex;
     vertical-align: baseline;
     background-color: rgb(174, 211, 246);
     margin: 0;
@@ -7,25 +12,126 @@ header{
     height: auto;
 }
 
-header h1{
+#starthead{
+    display: flex;
+    vertical-align: baseline;
+    background-color: rgb(174, 211, 246);
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: auto;
+}
+
+.title{
     font-family: 'Roboto', sans-serif;
     text-align: center;
+    width: 33%;
     padding: 0;
-    margin: 0;
+    margin: 15px;
     color: rgb(0, 0, 0);
 }
 
-header a {
-    position: absolute;
-    top: 10px;
-    left: 10px;
+.highbutton {
+    /* position: absolute; */
+    /* top: 10px;
+    left: 10px; */
+    width: 33%;
     font-family: 'Roboto', sans-serif;
+    text-align: left;
+    margin: 15px;
 
 }
-header p{
-    position: absolute;
-     /* how to make it go to the top right of the header*/
-    top: 10px;
-    right: 10px;
+
+.backbutton{
+    width: 33%;
     font-family: 'Roboto', sans-serif;
+    text-align: left;
+    margin: 15px;
+}
+
+.timertext{
+    /* position: absolute; */
+    /* top: 10px;
+    right: 10px; */
+    width: 33%;
+    font-family: 'Roboto', sans-serif;
+    text-align: right;
+    margin: 15px;
+}
+
+#highhead{
+    text-align: center;
+}
+
+#answers{
+    display: flex;
+    font-family: 'Roboto', sans-serif;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: auto;
+}
+
+#question{
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+    text-align: center;
+    position: relative;
+    padding: 0;
+    margin: 15px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(84, 84, 84);
+}
+
+#highscorepage{
+    display: none;
+}
+
+#gamepage{
+    display: none;
+}
+
+#startpage{
+    display: block;
+    /* position: relative; */
+    
+}
+
+#startbut{
+background-color: grey;
+width: 33%;
+padding: 0;
+margin: 15px;
+height: 50px;
+position: absolute;
+top: 50%;
+left: 33%;
+
+}
+
+.backbutton {
+    text-align: center;
+    width:33%;
+    margin:15px;
+    position:absolute;
+    left: 33%;
+}
+
+.answer{
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    position: relative;
+    padding: 0;
+    margin: 15px;
+    color: rgb(0, 0, 0);
+    background-color: rgb(84, 84, 84);
+    width: 33%;
+    height: 50px;
+}
+
+#questiontext{
+
 }
