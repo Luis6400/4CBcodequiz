@@ -10,6 +10,8 @@ var hisclis = document.getElementById("highscorelistol");
 var lastpage;
 var ispaused = false;
 var timer = document.getElementsByClassName("timernum");
+var timeleft = 30;
+
 
 var score;
 var endscore = document.getElementById("score");
@@ -71,6 +73,7 @@ strtbut.addEventListener("click", function () {
 );
 
 function startgame() {
+    var timeleft = 30;
     ispaused = false;
     score = 0;
     qnum = 1;
@@ -147,8 +150,12 @@ function rightanswer() {
 
 function wronganswer() {
     qnum++;
-    if (score > 0) {
-        score -= 10;
+    if (timeleft > 5) {
+        timeleft -= 5;
+    }
+    if (timeleft <= 5)
+    {
+        timeleft =0;
     }
     nextquestion();
 }
@@ -257,7 +264,6 @@ function submitter() {
 }
 
 function settime() {
-    var timeleft = 30;
     for (var i = 0; i < timer.length; i++) {
         timer[i].innerText = timeleft;
     }
@@ -270,9 +276,10 @@ function settime() {
                 timer[i].innerText = timeleft;
             }
         }
-        if (timeleft == 0) {
-            clearInterval(mytime);
+        if (timeleft <= 0) {
+            timeleft = 0;
             endgame();
+            clearInterval(mytime);
         }
 
     }, 1000);
