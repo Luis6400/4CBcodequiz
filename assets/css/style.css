@@ -70,7 +70,13 @@ body{
 }
 
 #highhead{
-    text-align: center;
+    display: flex;
+    vertical-align: baseline;
+    background-color: rgb(174, 211, 246);
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: auto;
 }
 
 #answers{
@@ -163,3 +169,6 @@ text-align: center;
     color: white;
 }
 
+.blank{
+    width: 33%;
+}
