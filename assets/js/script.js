@@ -155,6 +155,7 @@ function wronganswer() {
 
 function endgame() {
     ispaused = true;
+    clearInterval(mytime);
     gamepg.style.display = "none";
     endpg.style.display = "block";
     endscore.innerText = score;
@@ -174,7 +175,7 @@ function highscoreopen() {
     var hssetup = JSON.parse(hssetuptemp);
     // console.log(JSON.stringify(hssetup));
     
-    for (var i = 1; i < hssetup.length; i++){
+    for (var i = 1; i < hssetuptemp.length; i++){
     for (var j = 0; j < i; j++){
         var a = hssetup[i].score;
         var b = hssetup[j].score;
@@ -260,7 +261,7 @@ function settime(){
     var timeleft = 30;
     timer.innerText ="sfsd";
     
-        setInterval(() => {
+        var mytime = setInterval(() => {
 
             if(ispaused == false){
             timeleft--;
