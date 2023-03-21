@@ -155,7 +155,6 @@ function wronganswer() {
 
 function endgame() {
     ispaused = true;
-    // clearInterval(mytime);
     gamepg.style.display = "none";
     endpg.style.display = "block";
     endscore.innerText = score;
@@ -263,7 +262,7 @@ function settime() {
         timer[i].innerText = timeleft;
     }
 
-    var mytime = setInterval(() => {
+    const mytime = setInterval(() => {
 
         if (ispaused == false) {
             timeleft--;
