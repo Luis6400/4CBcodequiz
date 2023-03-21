@@ -155,7 +155,7 @@ function wronganswer() {
 
 function endgame() {
     ispaused = true;
-    clearInterval(mytime);
+    // clearInterval(mytime);
     gamepg.style.display = "none";
     endpg.style.display = "block";
     endscore.innerText = score;
@@ -174,26 +174,26 @@ function highscoreopen() {
     var hssetuptemp = localStorage.getItem("highscores");
     var hssetup = JSON.parse(hssetuptemp);
     // console.log(JSON.stringify(hssetup));
-    
-    for (var i = 1; i < hssetuptemp.length; i++){
-    for (var j = 0; j < i; j++){
-        var a = hssetup[i].score;
-        var b = hssetup[j].score;
-        if (a > b) {
-            var x = hssetup[i];
-            hssetup[i] = hssetup[j];
-            hssetup[j]= x;
+
+    for (var i = 1; i < hssetup.length; i++) {
+        for (var j = 0; j < i; j++) {
+            var a = hssetup[i].score;
+            var b = hssetup[j].score;
+            if (a > b) {
+                var x = hssetup[i];
+                hssetup[i] = hssetup[j];
+                hssetup[j] = x;
+            }
         }
-    }
     }
     // console.log(JSON.stringify(hssetup));
 
     for (var i = 0; i < 10; i++) {
         if (hssetup[i] != null) {
-        var hsliel = document.createElement("li");
-        hsliel.setAttribute("style", "list-style-type: decimal;")
-        hsliel.innerText = hssetup[i].user + " - " + hssetup[i].score;
-        highscorelist.appendChild(hsliel);
+            var hsliel = document.createElement("li");
+            hsliel.setAttribute("style", "list-style-type: decimal;")
+            hsliel.innerText = hssetup[i].user + " - " + hssetup[i].score;
+            highscorelist.appendChild(hsliel);
         }
     }
     // console.log(hssetup[0].user);
@@ -227,8 +227,8 @@ subbut.addEventListener("click", function () {
 
 subinput.addEventListener("keydown", function (event) {
     if (event.keyCode === 13) {
-    submitter();
-}
+        submitter();
+    }
 });
 
 function submitted() {
@@ -236,10 +236,10 @@ function submitted() {
     strtpg.style.display = "block";
 }
 
-function submitter(){
+function submitter() {
     var hsname = document.getElementById("endinputtext");
     if (hsname.value != "") {
-        var hstemp = {"user": hsname.value, "score":score};
+        var hstemp = { "user": hsname.value, "score": score };
         if (localStorage.getItem("highscores") === null) {
             var hshssetupay = [];
             hshssetupay.push(hstemp);
@@ -254,22 +254,27 @@ function submitter(){
     } else {
         alert("Please enter your name");
     }
-    
+
 }
 
-function settime(){
+function settime() {
     var timeleft = 30;
-    timer.innerText ="sfsd";
-    
-        var mytime = setInterval(() => {
+    for (var i = 0; i < timer.length; i++) {
+        timer[i].innerText = timeleft;
+    }
 
-            if(ispaused == false){
+    var mytime = setInterval(() => {
+
+        if (ispaused == false) {
             timeleft--;
-            timer.innerText = timeleft;
+            for (var i = 0; i < timer.length; i++) {
+                timer[i].innerText = timeleft;
             }
-            if(timeleft == 0){
-                endgame();
-            }
+        }
+        if (timeleft == 0) {
+            clearInterval(mytime);
+            endgame();
+        }
 
-        }, 1000);
+    }, 1000);
 }
