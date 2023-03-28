@@ -207,12 +207,13 @@ function highscoreopen() {
     strtpg.style.display = "none";
     gamepg.style.display = "none";
     endpg.style.display = "none";
+    
     hiscpg.style.display = "block";
 }
 
 function backbutton() {
     highscorelist.innerHTML = "";
-
+    
     ispaused = false;
     if (lastpage == strtpg) {
         hiscpg.style.display = "none";
@@ -239,6 +240,7 @@ subinput.addEventListener("keydown", function (event) {
 
 function submitted() {
     endpg.style.display = "none";
+    clearInterval(mytime);
     strtpg.style.display = "block";
 }
 
