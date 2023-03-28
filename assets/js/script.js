@@ -75,10 +75,10 @@ strtbut.addEventListener("click", function () {
 function startgame() {
     var timeleft = 30;
     ispaused = false;
+    settime();
     score = 0;
     qnum = 1;
     setquestion(q1, q1right, q1wronghssetupay);
-    settime();
 }
 
 function nextquestion() {
@@ -240,8 +240,8 @@ subinput.addEventListener("keydown", function (event) {
 
 function submitted() {
     endpg.style.display = "none";
-    clearInterval(mytime);
     strtpg.style.display = "block";
+    timeleft = 30;
 }
 
 function submitter() {
