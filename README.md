@@ -9,7 +9,7 @@ This Project is a coding quiz on matters we have learned in my coding boot camp.
 
 ## Installation
 
-N/A for this site
+https://luis6400.github.io/4CBcodequiz/
 
 ## Usage
 
